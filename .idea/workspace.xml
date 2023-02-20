@@ -5,20 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da13fce-e3a5-48ae-9434-7d237ed82829" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/exceptions/LinearSystemSolvingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystemSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matrix2.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/DataInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/DataInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/StreamInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/StreamInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/HelpOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/HelpOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +50,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.dmtri.Main" />
       <module name="gauss_seidel" />
-      <option name="PROGRAM_PARAMETERS" value="--file matrix.txt -s 2 2" />
+      <option name="PROGRAM_PARAMETERS" value="--file matrix2.txt -s 2 2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="io.dmtri.math.*" />
@@ -88,7 +79,7 @@
       <workItem from="1676366670640" duration="2891000" />
       <workItem from="1676452895285" duration="6201000" />
       <workItem from="1676556055006" duration="2274000" />
-      <workItem from="1676881231421" duration="10512000" />
+      <workItem from="1676881231421" duration="12736000" />
     </task>
     <servers />
   </component>
@@ -99,9 +90,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -33,12 +33,12 @@ public class Main {
             System.out.println(x.formatMatrix());
 
         } catch (DataInputException e) {
-            System.err.println("Failed to load data: " + e.getMessage());
+            System.err.println("Failed to load data:\n" + e.getMessage());
             e.printStackTrace();
         } catch (LinearSystemSolvingException e) {
-            System.err.println("An error occurred while trying to solve the system of linear equations: " + e.getMessage());
+            System.err.println("An error occurred while trying to solve the system of linear equations:\n" + e.getMessage());
         } catch (Exception e) {
-            System.err.println("Unknown error: " + e.getMessage());
+            System.err.println("Unknown error:\n" + e.getMessage());
         }
     }
 }

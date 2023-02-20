@@ -78,6 +78,14 @@ public class Matrix {
         return result;
     }
 
+    public void swapRows(int i, int j) {
+        for (int k = 0; k < getWidth(); k++) {
+            double temp = matrix[i][k];
+            matrix[i][k] = matrix[j][k];
+            matrix[j][k] = temp;
+        }
+    }
+
     @Override
     public String toString() {
         return getHeight() + "x" + getWidth() + " matrix";
