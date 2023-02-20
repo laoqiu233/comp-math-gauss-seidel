@@ -1,7 +1,7 @@
 package io.dmtri.options;
 
 import io.dmtri.Configuration;
-import io.dmtri.Matrix;
+import io.dmtri.math.Matrix;
 import io.dmtri.datainputs.DataInput;
 import io.dmtri.datainputs.StreamInput;
 import io.dmtri.exceptions.DataInputException;
@@ -23,17 +23,16 @@ public class FileInputOption extends AbstractOption{
 
     @Override
     public void execute(Configuration configuration, String[] arguments) throws OptionParsingException {
-        configuration.setDataInput(new DataInput() {
-            @Override
-            public Matrix getData(int height, int width) throws DataInputException {
-                try (FileInputStream in = new FileInputStream(arguments[0])) {
-                    return new StreamInput(in).getData(height, width);
-                } catch (FileNotFoundException e) {
-                    throw new DataInputException("File " + arguments[0] + " was not found", e);
-                } catch (IOException e) {
-                    throw new DataInputException("Failed to read data from file " + arguments[0], e);
+        try {
+            FileInputStream in = new FileInputStream(arguments[0]);
+            configuration.setDataInput(new StreamInput(in) {
+                @Override
+                public String toString() {
+                    return "input from file file \"" + arguments[0] + "\"";
                 }
-            }
-        });
+            });
+        } catch (FileNotFoundException e) {
+            throw new OptionParsingException("Can not find file with name " + arguments[0]);
+        }
     }
 }

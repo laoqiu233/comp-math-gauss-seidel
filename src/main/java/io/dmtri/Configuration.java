@@ -1,6 +1,7 @@
 package io.dmtri;
 
 import io.dmtri.datainputs.DataInput;
+import io.dmtri.math.LinearSystem;
 import io.dmtri.datainputs.RandomInput;
 import io.dmtri.exceptions.DataInputException;
 
@@ -25,6 +26,10 @@ public class Configuration {
         this.dataInput = dataInput;
     }
 
+    public DataInput getDataInput() {
+        return dataInput;
+    }
+
     public int getWidth() {
         return width;
     }
@@ -33,7 +38,4 @@ public class Configuration {
         return height;
     }
 
-    public Matrix getDataFromConfiguration() throws DataInputException {
-        return dataInput.getData(getHeight(), getWidth());
-    }
 }

@@ -5,22 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da13fce-e3a5-48ae-9434-7d237ed82829" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/OptionsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/DataInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/StreamInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/exceptions/OptionParsingException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/AbstractOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/HelpOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/OptionsManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/RandomInputOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/SizeOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/exceptions/LinearSystemSolvingException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystemSolver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/DataInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/DataInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/StreamInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/StreamInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/HelpOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/HelpOption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -46,23 +45,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="io.dmtri.Main" />
       <module name="gauss_seidel" />
+      <option name="PROGRAM_PARAMETERS" value="--file matrix.txt -s 2 2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.dmtri.*" />
+          <option name="PATTERN" value="io.dmtri.math.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,10 +87,23 @@
       <workItem from="1676322148319" duration="3177000" />
       <workItem from="1676366670640" duration="2891000" />
       <workItem from="1676452895285" duration="6201000" />
+      <workItem from="1676556055006" duration="2274000" />
+      <workItem from="1676881231421" duration="10512000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

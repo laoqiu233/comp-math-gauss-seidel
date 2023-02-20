@@ -1,7 +1,7 @@
 package io.dmtri.options;
 
 import io.dmtri.Configuration;
-import io.dmtri.Matrix;
+import io.dmtri.math.Matrix;
 import io.dmtri.datainputs.StreamInput;
 import io.dmtri.exceptions.DataInputException;
 import io.dmtri.exceptions.OptionParsingException;
@@ -23,6 +23,11 @@ public class StdinInputOption extends AbstractOption {
             public Matrix getData(int height, int width) throws DataInputException {
                 System.out.println("Please enter a matrix with " + height + " rows and " + width + " columns:");
                 return super.getData(height, width);
+            }
+
+            @Override
+            public String toString() {
+                return "standard input";
             }
         });
     }

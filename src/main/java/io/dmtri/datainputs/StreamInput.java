@@ -1,25 +1,23 @@
 package io.dmtri.datainputs;
 
-import io.dmtri.Matrix;
+import io.dmtri.math.Matrix;
 import io.dmtri.exceptions.DataInputException;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
-import java.util.function.Supplier;
 
 public class StreamInput implements DataInput {
-    private final InputStream in;
+    private final Scanner scanner;
 
     public StreamInput(InputStream in) {
-        this.in = in;
+        this.scanner = new Scanner(in);
     }
 
     @Override
     public Matrix getData(int height, int width) throws DataInputException {
-        try (Scanner scanner = new Scanner(in)) {
+        try {
             final Matrix result = new Matrix(height, width);
 
             for (int i = 0; i < height; i++) {
@@ -31,6 +29,13 @@ public class StreamInput implements DataInput {
             return result;
         } catch (InputMismatchException e) {
             throw new DataInputException("Invalid data provided", e);
+        } catch (NoSuchElementException e) {
+            throw new DataInputException("Not enough data provided", e);
         }
+    }
+
+    @Override
+    public void close() {
+        scanner.close();
     }
 }

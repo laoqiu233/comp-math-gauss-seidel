@@ -1,7 +1,13 @@
 package io.dmtri;
 
+import io.dmtri.datainputs.DataInput;
+import io.dmtri.exceptions.LinearSystemSolvingException;
+import io.dmtri.math.GaussSeidelSolver;
+import io.dmtri.math.LinearSystem;
 import io.dmtri.exceptions.DataInputException;
 import io.dmtri.exceptions.OptionParsingException;
+import io.dmtri.math.LinearSystemSolver;
+import io.dmtri.math.Matrix;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,22 +15,30 @@ public class Main {
         try {
             OptionsParser.parse(args, config);
         } catch (OptionParsingException e) {
-            System.out.println("Failed to parse arguments:");
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
+            return;
         }
 
-        try {
-            Matrix matrix = config.getDataFromConfiguration();
+        try (DataInput input = config.getDataInput()) {
+            Matrix a = input.getData(config.getHeight(), config.getWidth());
+            Matrix b = input.getData(config.getHeight(), 1);
+            LinearSystem system = new LinearSystem(a, b);
 
-            for (int i = 0; i < matrix.getHeight(); i++) {
-                for (int j = 0; j < matrix.getWidth(); j++) {
-                    System.out.print(Math.round(matrix.get(i, j) * 100) / 100.0d + "\t\t\t");
-                }
-                System.out.println();
-            }
+            System.out.println(a.formatMatrix());
+            System.out.println(b.formatMatrix());
+
+            LinearSystemSolver solver = new GaussSeidelSolver(0.0001, 1000);
+            Matrix x = solver.solve(system);
+
+            System.out.println(x.formatMatrix());
+
         } catch (DataInputException e) {
-            System.out.println("Failed to load data" + e.getMessage());
+            System.err.println("Failed to load data: " + e.getMessage());
             e.printStackTrace();
+        } catch (LinearSystemSolvingException e) {
+            System.err.println("An error occurred while trying to solve the system of linear equations: " + e.getMessage());
+        } catch (Exception e) {
+            System.err.println("Unknown error: " + e.getMessage());
         }
     }
 }

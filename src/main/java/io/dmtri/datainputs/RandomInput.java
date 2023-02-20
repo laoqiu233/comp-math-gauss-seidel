@@ -1,6 +1,6 @@
 package io.dmtri.datainputs;
 
-import io.dmtri.Matrix;
+import io.dmtri.math.Matrix;
 
 import java.util.Random;
 
@@ -30,5 +30,10 @@ public class RandomInput implements DataInput {
     @Override
     public String toString() {
         return "random numbers from " + lowerBound + " to " + upperBound;
+    }
+
+    @Override
+    public void close() {
+        // Do nothing
     }
 }
