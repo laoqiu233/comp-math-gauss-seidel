@@ -27,7 +27,7 @@ public class Main {
             System.out.println(a.formatMatrix());
             System.out.println(b.formatMatrix());
 
-            LinearSystemSolver solver = new GaussSeidelSolver(0.0001, 1000);
+            LinearSystemSolver solver = config.getSolver();
             Matrix x = solver.solve(system);
 
             System.out.println(x.formatMatrix());

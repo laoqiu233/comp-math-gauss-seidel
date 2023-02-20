@@ -14,7 +14,8 @@ public class OptionsManager {
                 new SizeOption(),
                 new RandomInputOption(),
                 new StdinInputOption(),
-                new FileInputOption()
+                new FileInputOption(),
+                new GaussSeidelOption()
         };
 
         for (AbstractOption arg : allOptions) {

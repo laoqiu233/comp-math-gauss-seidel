@@ -16,7 +16,7 @@ public class GaussSeidelSolver implements LinearSystemSolver {
         for (int i = 0; i < m.getWidth(); i++) sum += Math.abs(m.get(row, i));
 
         for (int i = 0; i < m.getWidth(); i++) {
-            if (sum < 2 * Math.abs(m.get(row, i))) return i;
+            if (sum <= 2 * Math.abs(m.get(row, i))) return i;
         }
 
         return -1;
