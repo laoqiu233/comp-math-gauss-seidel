@@ -19,9 +19,15 @@ public class RandomInput implements DataInput {
         Random r = new Random();
 
         for (int i = 0; i < height; i++) {
+            double rowSum = 0;
             for (int j = 0; j < width; j++) {
                 result.set(i, j, r.nextDouble(lowerBound, upperBound));
+                rowSum += Math.abs(result.get(i, j));
             }
+
+            // This will make the matrix diagonally dominant, though values on
+            // the diagonal will be out of the specified range.
+            if (i < width) result.set(i, i, rowSum);
         }
 
         return result;

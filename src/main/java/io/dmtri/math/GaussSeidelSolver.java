@@ -1,5 +1,6 @@
 package io.dmtri.math;
 
+import io.dmtri.Configuration;
 import io.dmtri.exceptions.LinearSystemSolvingException;
 
 public class GaussSeidelSolver implements LinearSystemSolver {
@@ -57,7 +58,7 @@ public class GaussSeidelSolver implements LinearSystemSolver {
     }
 
     @Override
-    public Matrix solve(LinearSystem system) throws LinearSystemSolvingException {
+    public Matrix solve(LinearSystem system, Configuration config) throws LinearSystemSolvingException {
         Matrix a = system.a();
         Matrix b = system.b();
 
@@ -73,7 +74,8 @@ public class GaussSeidelSolver implements LinearSystemSolver {
         while (iterations++ < maxIterations && !reachedEpsilon) {
             reachedEpsilon = true;
 
-            System.err.println("Iteration No." + iterations + " error = " + system.getError(x));
+            if (config.getFlag(Configuration.DEBUG_FLAG)) System.err.println("Iteration No." + iterations + " error = " + system.getError(x));
+
             for (int i = 0; i < a.getHeight(); i++) {
                 double s = b.get(i, 0);
 

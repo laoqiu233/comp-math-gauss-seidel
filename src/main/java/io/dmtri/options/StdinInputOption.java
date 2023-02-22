@@ -12,7 +12,7 @@ public class StdinInputOption extends AbstractOption {
                 "stdin",
                 'c',
                 0,
-                "- configures the application to read the input from a file, default input is " + Configuration.DEFAULT_DATA_INPUT
+                "configures the application to read the input from a file, default input is " + Configuration.DEFAULT_DATA_INPUT
         );
     }
 

@@ -9,7 +9,7 @@ public class SizeOption extends AbstractOption{
                 "size",
                 's',
                 2,
-                "[height] [width] - configures the dimensions of the matrix"
+                "[height] [width] configures the dimensions of the matrix"
         );
     }
 

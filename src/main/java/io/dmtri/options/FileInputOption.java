@@ -17,7 +17,7 @@ public class FileInputOption extends AbstractOption{
                 "file",
                 'f',
                 1,
-                "[path-to-file] - configures the application to read the input from a file, default input is " + Configuration.DEFAULT_DATA_INPUT
+                "[path-to-file] configures the application to read the input from a file, default input is " + Configuration.DEFAULT_DATA_INPUT
         );
     }
 

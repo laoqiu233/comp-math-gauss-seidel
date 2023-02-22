@@ -15,7 +15,9 @@ public class OptionsManager {
                 new RandomInputOption(),
                 new StdinInputOption(),
                 new FileInputOption(),
-                new GaussSeidelOption()
+                new GaussSeidelOption(),
+                new DebugOption(),
+                new TimeOption()
         };
 
         for (AbstractOption arg : allOptions) {
