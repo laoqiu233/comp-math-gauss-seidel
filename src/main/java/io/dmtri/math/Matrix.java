@@ -1,6 +1,7 @@
 package io.dmtri.math;
 
 import java.util.Formatter;
+import java.util.function.UnaryOperator;
 
 public class Matrix {
     private final double[][] matrix;
@@ -84,6 +85,18 @@ public class Matrix {
             matrix[i][k] = matrix[j][k];
             matrix[j][k] = temp;
         }
+    }
+
+    public Matrix apply(UnaryOperator<Double> func) {
+        Matrix result = new Matrix(getHeight(), getWidth());
+
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                result.set(i, j, func.apply(get(i, j)));
+            }
+        }
+
+        return result;
     }
 
     @Override

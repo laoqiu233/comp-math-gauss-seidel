@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2da13fce-e3a5-48ae-9434-7d237ed82829" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/matrix3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/GaussSeidelOption.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/OptionsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/OptionsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matrix3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/Matrix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +78,8 @@
       <workItem from="1676366670640" duration="2891000" />
       <workItem from="1676452895285" duration="6201000" />
       <workItem from="1676556055006" duration="2274000" />
-      <workItem from="1676881231421" duration="15580000" />
+      <workItem from="1676881231421" duration="16485000" />
+      <workItem from="1677097027312" duration="365000" />
     </task>
     <servers />
   </component>
