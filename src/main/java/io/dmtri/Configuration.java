@@ -12,7 +12,7 @@ public class Configuration {
     public static final LinearSystemSolver DEFAULT_SOLVER = new GaussSeidelSolver(0.0001, 1000);
     public static final int DEBUG_FLAG = 1;
     public static final int TIME_FLAG = 1 << 1;
-    public static final int DEFAULT_FLAGS = TIME_FLAG;
+    public static final int DEFAULT_FLAGS = 0;
 
     private int width = DEFAULT_WIDTH;
     private int height = DEFAULT_HEIGHT;
