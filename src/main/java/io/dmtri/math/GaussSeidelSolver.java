@@ -3,11 +3,11 @@ package io.dmtri.math;
 import io.dmtri.exceptions.LinearSystemSolvingException;
 
 public class GaussSeidelSolver implements LinearSystemSolver {
-    private final double error;
+    private final double eps;
     private final int maxIterations;
 
-    public GaussSeidelSolver(double error, int maxIterations) {
-        this.error = error;
+    public GaussSeidelSolver(double eps, int maxIterations) {
+        this.eps = eps;
         this.maxIterations = maxIterations;
     }
 
@@ -66,10 +66,13 @@ public class GaussSeidelSolver implements LinearSystemSolver {
 
         if (!makeDiagonallyDominant(system)) throw new LinearSystemSolvingException("Matrix A is not and can not be transformed to a diagonally dominant form");
 
+        boolean reachedEpsilon = false;
         Matrix x = new Matrix(a.getHeight(), 1);
         int iterations = 0;
 
-        while (iterations++ < maxIterations && system.getError(x) > error) {
+        while (iterations++ < maxIterations && !reachedEpsilon) {
+            reachedEpsilon = true;
+
             System.err.println("Iteration No." + iterations + " error = " + system.getError(x));
             for (int i = 0; i < a.getHeight(); i++) {
                 double s = b.get(i, 0);
@@ -82,7 +85,9 @@ public class GaussSeidelSolver implements LinearSystemSolver {
                     s -= x.get(j, 0) * a.get(i, j);
                 }
 
-                x.set(i, 0, s / a.get(i, i));
+                s /= a.get(i, i);
+                if (Math.abs(s - x.get(i, 0)) > eps) reachedEpsilon = false;
+                x.set(i, 0, s);
             }
         }
 
@@ -91,6 +96,6 @@ public class GaussSeidelSolver implements LinearSystemSolver {
 
     @Override
     public String toString() {
-        return "Gauss-Seidel method using a maximum of " + maxIterations + " iterations and an error of " + error;
+        return "Gauss-Seidel method using a maximum of " + maxIterations + " iterations and an epsilon value of " + eps;
     }
 }
