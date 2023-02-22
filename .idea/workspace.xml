@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2da13fce-e3a5-48ae-9434-7d237ed82829" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/DebugOption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/TimeOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Configuration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/datainputs/RandomInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/GaussSeidelSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystemSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/math/LinearSystemSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/FileInputOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/OptionsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/OptionsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/SizeOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/SizeOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/dmtri/options/StdinInputOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ОТЧЁТ.docx" beforeDir="false" afterPath="$PROJECT_DIR$/ОТЧЁТ.docx" afterDir="false" />
-    </list>
+    <list default="true" id="2da13fce-e3a5-48ae-9434-7d237ed82829" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +76,7 @@
       <workItem from="1676881231421" duration="16485000" />
       <workItem from="1677097027312" duration="365000" />
       <workItem from="1677097495082" duration="3565000" />
-      <workItem from="1677102361292" duration="1966000" />
+      <workItem from="1677102361292" duration="2528000" />
     </task>
     <servers />
   </component>
