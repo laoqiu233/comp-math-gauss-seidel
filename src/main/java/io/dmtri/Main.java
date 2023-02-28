@@ -3,6 +3,7 @@ package io.dmtri;
 import io.dmtri.datainputs.DataInput;
 import io.dmtri.exceptions.LinearSystemSolvingException;
 import io.dmtri.math.GaussSeidelSolver;
+import io.dmtri.math.IterativeLinearSystemSolver;
 import io.dmtri.math.LinearSystem;
 import io.dmtri.exceptions.DataInputException;
 import io.dmtri.exceptions.OptionParsingException;
@@ -44,8 +45,12 @@ public class Main {
             timerStart();
             LinearSystemSolver solver = config.getSolver();
             Matrix x = solver.solve(system, config);
-            // TODO: indexes, iterations
+
             if (config.getFlag(Configuration.TIME_FLAG)) printTimeElapsed();
+
+            if (solver instanceof IterativeLinearSystemSolver iSolver) {
+                System.out.println("Iterations taken: " + iSolver.getIterations());
+            }
 
             System.out.println(x.formatMatrix(2, "X%d: "));
 

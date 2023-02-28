@@ -3,9 +3,10 @@ package io.dmtri.math;
 import io.dmtri.Configuration;
 import io.dmtri.exceptions.LinearSystemSolvingException;
 
-public class GaussSeidelSolver implements LinearSystemSolver {
+public class GaussSeidelSolver implements IterativeLinearSystemSolver {
     private final double eps;
     private final int maxIterations;
+    private int iterations = 0;
 
     public GaussSeidelSolver(double eps, int maxIterations) {
         this.eps = eps;
@@ -37,7 +38,7 @@ public class GaussSeidelSolver implements LinearSystemSolver {
             int minRow = i;
             int minCol = iDom;
 
-            for (int j = i+1; j < system.a().getHeight(); j++) {
+            for (int j = i + 1; j < system.a().getHeight(); j++) {
                 int jDom = getDominantElementInRow(system.a(), j);
                 if (jDom < 0) return false;
 
@@ -69,9 +70,10 @@ public class GaussSeidelSolver implements LinearSystemSolver {
 
         boolean reachedEpsilon = false;
         Matrix x = new Matrix(a.getHeight(), 1);
-        int iterations = 0;
+        iterations = 0;
 
-        while (iterations++ < maxIterations && !reachedEpsilon) {
+        while (iterations < maxIterations && !reachedEpsilon) {
+            iterations++;
             reachedEpsilon = true;
 
             if (config.getFlag(Configuration.DEBUG_FLAG)) System.err.println("Iteration No." + iterations + " error = " + system.getError(x));
@@ -94,6 +96,10 @@ public class GaussSeidelSolver implements LinearSystemSolver {
         }
 
         return x;
+    }
+
+    public int getIterations() {
+        return iterations;
     }
 
     @Override
