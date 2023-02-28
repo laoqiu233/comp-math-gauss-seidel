@@ -45,8 +45,9 @@ public class Main {
             LinearSystemSolver solver = config.getSolver();
             Matrix x = solver.solve(system, config);
             // TODO: indexes, iterations
-            System.out.println(x.formatMatrix(2));
             if (config.getFlag(Configuration.TIME_FLAG)) printTimeElapsed();
+
+            System.out.println(x.formatMatrix(2, "X%d: "));
 
             System.out.println("Final mean error: " + system.getError(x));
         } catch (DataInputException e) {

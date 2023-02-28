@@ -104,7 +104,7 @@ public class Matrix {
         return getHeight() + "x" + getWidth() + " matrix";
     }
 
-    public String formatMatrix(int decimalDigits) {
+    public String formatMatrix(int decimalDigits, String rowPrefixFormat) {
         Formatter formatter = new Formatter();
 
         int[] columnsSize = new int[getWidth()];
@@ -118,6 +118,7 @@ public class Matrix {
         }
 
         for (int i = 0; i < getHeight(); i++) {
+            if (rowPrefixFormat != null) formatter.format(rowPrefixFormat, i+1);
             for (int j = 0; j < getWidth(); j++) {
                 formatter.format("%"+columnsSize[j]+"."+decimalDigits+"f\t", get(i, j));
             }
@@ -125,5 +126,9 @@ public class Matrix {
         }
 
         return formatter.toString();
+    }
+
+    public String formatMatrix(int decimalDigits) {
+        return formatMatrix(decimalDigits, null);
     }
 }
