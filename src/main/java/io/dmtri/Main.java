@@ -16,9 +16,8 @@ public class Main {
         start = System.currentTimeMillis();
     }
 
-    private static void printTimeElapsed(Configuration config) {
-        if (config.getFlag(Configuration.TIME_FLAG))
-            System.out.println("Time taken: " + (System.currentTimeMillis() - start) + " ms");
+    private static void printTimeElapsed() {
+        System.out.println("Time taken: " + (System.currentTimeMillis() - start) + " ms");
     }
 
     public static void main(String[] args) {
@@ -31,24 +30,23 @@ public class Main {
         }
 
         try (DataInput input = config.getDataInput()) {
-            timerStart();
             Matrix a = input.getData(config.getHeight(), config.getWidth());
             Matrix b = input.getData(config.getHeight(), 1);
             LinearSystem system = new LinearSystem(a, b);
 
             if (config.getFlag(Configuration.DEBUG_FLAG)) {
                 System.out.println("Matrix A:");
-                System.out.println(a.formatMatrix());
+                System.out.println(a.formatMatrix(2));
                 System.out.println("Matrix B:");
-                System.out.println(b.formatMatrix());
+                System.out.println(b.formatMatrix(2));
             }
 
             timerStart();
             LinearSystemSolver solver = config.getSolver();
             Matrix x = solver.solve(system, config);
-
-            System.out.println(x.formatMatrix());
-            printTimeElapsed(config);
+            // TODO: indexes, iterations
+            System.out.println(x.formatMatrix(2));
+            if (config.getFlag(Configuration.TIME_FLAG)) printTimeElapsed();
 
             System.out.println("Final mean error: " + system.getError(x));
         } catch (DataInputException e) {

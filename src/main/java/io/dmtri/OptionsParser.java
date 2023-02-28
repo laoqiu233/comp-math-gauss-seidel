@@ -19,7 +19,7 @@ public class OptionsParser {
             if (optionToExecute == null) throw new OptionParsingException("Invalid option " + args[i]);
 
             if (i + optionToExecute.getArgumentsCount() >= args.length)
-                throw new OptionParsingException("Not enough arguments, option " + args[i] + " requires " + optionToExecute + " parameters");
+                throw new OptionParsingException("Not enough arguments, option " + args[i] + " requires " + optionToExecute.getArgumentsCount() + " parameters");
 
             String[] arguments = new String[optionToExecute.getArgumentsCount()];
 

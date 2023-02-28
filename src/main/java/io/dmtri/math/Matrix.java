@@ -104,12 +104,22 @@ public class Matrix {
         return getHeight() + "x" + getWidth() + " matrix";
     }
 
-    public String formatMatrix() {
+    public String formatMatrix(int decimalDigits) {
         Formatter formatter = new Formatter();
+
+        int[] columnsSize = new int[getWidth()];
+
+        // First pass, get the maximum width of all
+        // columns for proper formatting
+        for (int i = 0; i < getHeight(); i++) {
+            for (int j = 0; j < getWidth(); j++) {
+                columnsSize[j] = Math.max(columnsSize[j], String.format("%."+decimalDigits+"f", get(i, j)).length());
+            }
+        }
 
         for (int i = 0; i < getHeight(); i++) {
             for (int j = 0; j < getWidth(); j++) {
-                formatter.format("%-5.5f ", get(i, j));
+                formatter.format("%"+columnsSize[j]+"."+decimalDigits+"f\t", get(i, j));
             }
             formatter.format("\n");
         }
